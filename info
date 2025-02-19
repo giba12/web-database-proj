@@ -3,3 +3,16 @@ Database schema/peusdo
 databse password: saGEpapnHmZYzaDw
 
 database link: mongodb+srv://giba:<saGEpapnHmZYzaDw>@cluster0.zog7p.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
+
+libs:
+nondemon
+socket.io
+mongoose
+mongodb
+http
+dotenv
+express
+cors
+
+use " npm run dev ", script that = nodemon index.js -> will need to change to nodemon server.js when DB auth fixed
