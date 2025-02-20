@@ -1,5 +1,5 @@
 
-//
+//change to default instead of index.js
 
 import connectDB from "./config/database.js";
 import dotenv from "dotenv";

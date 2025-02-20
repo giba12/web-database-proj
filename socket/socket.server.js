@@ -4,6 +4,7 @@ import {Server} from "socket.io";
 let io;
 
 //edit for role based access/etc
+//maybe delete this // change for encrypt
 const connectedUsers = new Map();
 
 export const initializeSocket = (httpServer) =>{

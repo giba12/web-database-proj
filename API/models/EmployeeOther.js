@@ -12,6 +12,10 @@ const employeeOtherSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    roleType: {
+        type: String,
+        required: true
+    },
     deviceID: String,
     doc: String, //will need to change to docs will be embedded type
 });
