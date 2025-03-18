@@ -10,7 +10,7 @@ const deviceSchema = new mongoose.Schema({
         required: true
     },
     deviceType: String,
-    status: String,
+    status: String, //in use/etc
     userHistory: [{
         employeeID: String,
         checkout: Date,
