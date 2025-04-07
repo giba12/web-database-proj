@@ -1,5 +1,6 @@
 import Employee from "../models/Employee.js";
 import bcrypt from "bcrypt";
+import { sendOnboardingEmail } from '../utils/sendEmail.js'; // adjust path if needed
 
 export const onboardUser = async (req, res) => {
   try {
@@ -41,8 +42,12 @@ export const onboardUser = async (req, res) => {
 
     // Save to DB
     await newEmployee.save();
+  
+// send onboarding email
+await sendOnboardingEmail(email, userName, tempPassword);
 
-    // 🔐 Log for debugging
+
+    //  Log for debugging
     console.log("✅ Employee onboarded:");
     console.log({
       name,
