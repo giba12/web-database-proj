@@ -19,6 +19,41 @@ const deviceSchema = new mongoose.Schema({
     softwareInstalled: String
 });
 
+/** Device Inventory Management
+const mongoose = require('mongoose');
+
+const deviceSchema = new mongoose.Schema({
+  deviceId: {
+    type: String,
+    unique: true,
+    required: true
+  },
+  type: {
+    type: String,
+    required: true
+  },
+  owner: {
+    type: String,
+    default: null
+  },
+  status: {
+    type: String,
+    enum: ['available', 'assigned', 'under_repair', 'retired'],
+    default: 'available'
+  },
+  purchaseDate: {
+    type: Date,
+    required: true
+  },
+  notes: String,
+}, { timestamps: true });
+
+module.exports = mongoose.model('Device', deviceSchema);
+*/
+
+
+
+
 /**
  * (blank)Schema.pre(?)("save", async function (next)
  * { if(!this.isModified("password")){
