@@ -1,22 +1,15 @@
+require('dotenv').config();
+const mongoose = require('mongoose');
+mongoose.connect("mongodb://127.0.0.1:27017/user-roles-perm");
 
-//DELETE/TESTING ONLY/ file for testing/starting purpose 
+const express = require('express');
+const app = express();
+app.use(express.static('public'));
 
-import {connectDB} from "./API/config/database.js"; 
-import mongoose from "mongoose";
-import dotenv from "dotenv";
-import express from "express";
+const port = process.env.PORT | 5000;
 
-const app = express()
+app.listen(port, ()=>{
 
-//dotenv.config();
+    console.log("Server is running on Port: "+port);
 
-//may need to edit ip address on mongodb to allow ur device to connect to db
-connectDB();
-
-app.get('/', (req,res)=> {
-    res.send("index/js");
-}); 
-
-app.listen(5000, () =>{ //
-    console.log("server/port 5000");
 });
