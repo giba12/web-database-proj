@@ -2,7 +2,7 @@ import {create} from "zustand";
 import { axiosInstance } from "../lib/axios";
 import { disconnectSocket, initializeSocket } from "../socket/socket.client";
 
-export const authStore = create((set) => ({
+export const AuthStore = create((set) => ({
 	authUser: null,
 	checkingAuth: true,
 	loading: false,

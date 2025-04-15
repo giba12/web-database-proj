@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { authStore } from "../store/authStore";
+import { authStore } from "../store/AuthStore";
 import { Link } from "react-router-dom";
 import { Flame, User, LogOut, Menu } from "lucide-react";
 

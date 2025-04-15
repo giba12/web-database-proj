@@ -4,7 +4,7 @@ import LoginForm from "../components/LoginForm";
 import newForm from "../components/newForm";
 
 
-const authpage = () => {
+const Authpage = () => {
 	const [isLogin, setIsLogin] = useState(true);
 
 	return (
@@ -36,4 +36,4 @@ const authpage = () => {
 		</div>
 	);
 };
-export default authpage;
+export default Authpage;

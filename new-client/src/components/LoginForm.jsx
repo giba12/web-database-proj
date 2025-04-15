@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { authStore } from "../store/authStore";
+import { authStore } from "../store/AuthStore";
 
 const LoginForm = () => {
 	const [email, setEmail] = useState("");

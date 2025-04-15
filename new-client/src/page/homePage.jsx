@@ -3,9 +3,9 @@ import { useEffect } from "react";
 import { Header } from "./components/Header";
 import { Frown } from "lucide-react";
 
-import { authStore } from "../store/authStore";
+import { AuthStore } from "../store/AuthStore";
 
-const HomePage = () => {
+const Homepage = () => {
 	
 	return (
 		<div
@@ -17,7 +17,7 @@ const HomePage = () => {
 		</div>
 	);
 };
-export default HomePage;
+export default Homepage;
 
 const LoadingUI = () => {
 	return (

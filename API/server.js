@@ -38,10 +38,10 @@ app.use(
 app.use("/api/auth", authRoutes); // login route
 
 if (process.env.NODE_ENV === "development") { //production or development
-	app.use(express.static(path.join(__dirname, "/client/src")));
+	app.use(express.static(path.join(__dirname, "/new-client/src")));
 
 	app.get("*", (req, res) => {
-		res.sendFile(path.resolve(__dirname, "client", "index.html"));
+		res.sendFile(path.resolve(__dirname, "new-client", "index.html"));
 	});
 }
 
