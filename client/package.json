@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "new-test": "file:.."
+  }
+}
