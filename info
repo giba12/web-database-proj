@@ -14,5 +14,9 @@ http
 dotenv
 express
 cors
+vite
+vue
+bcyrpt
+axios
 
 use " npm run dev ", script that = nodemon index.js -> will need to change to nodemon server.js when DB auth fixed
