@@ -1,3 +1,4 @@
+//Made by Gina Bain
 //use old server and properly integrate the project
 //AKA be sure to finish client-side auth, onboarding, deboarding, role access, etc
 
@@ -6,13 +7,15 @@ import { createServer } from "http";
 import cors from "cors";
 import express from "express";
 import path from "path";
+import mongoose from "mongoose";
 
 
 
-// ✅ Route imports
+// Route imports
 //import router from "./routes/deviceRoutes.js"; 
 import onboard from "./routes/onboardingRoutes.js";
-//import authRoutes from "./routes/authRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
+import learningCenterRoutes from "./routes/LearningCenterRoutes.js";
 
 
 import { initializeSocket } from "./socket/socket.server.js";
@@ -27,7 +30,7 @@ const __dirname = path.resolve();
 
 initializeSocket(httpServer);
 
-// ✅ Middleware
+//Middleware
 app.use(cors())
 app.use(express.json());
 
@@ -38,11 +41,8 @@ app.use(express.json());
   })
 ); */
 
-
-
-// ✅ API Routes
-//app.use("/api/on", onboarding);
-//app.use("/api/auth", authRoutes); // login route
+//API Routes
+app.use('/api', authRoutes); // login route
 app.use('/api',onboard)
 
 if (process.env.NODE_ENV === "development") { //production or development
@@ -53,17 +53,18 @@ if (process.env.NODE_ENV === "development") { //production or development
 	});
 }
 
-// ✅ 404 Catch-all
+// 404 Catch-all
 app.use(/(.*)/, (req, res) => {
-  res.status(404).send(`❌ Route not found: ${req.originalUrl}`);
+  res.status(404).send(` Route not found: ${req.originalUrl}`);
 });
 
-// ✅ Connect to DB and start server
+//  Connect to DB and start server
 httpServer.listen(PORT, () => {
-  console.log(`✅ Server @ port: ${PORT}`);
+  console.log(` Server @ port: ${PORT}`);
   connectDB();
 });
 
 app.use(cors());
 app.use(express.json());
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`))
+
