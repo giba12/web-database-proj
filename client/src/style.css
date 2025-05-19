@@ -1,3 +1,4 @@
+/*Made by Gina Bain*/
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -5,7 +6,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #0ceb0c;
+  background-color: #bb8727;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,21 +20,21 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: #45c213;
+  color: #5a7b4c;
 }
 
 body {
-  margin: 0;
+  margin: auto;
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
   background-color: #1e2036;
 }
-
 h1 {
   font-size: 3.2em;
   line-height: normal;
+  margin-bottom: flex;
 }
 
 button {
@@ -46,6 +47,7 @@ button {
   background-color: #9d98b1;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin: auto;
 }
 button:hover {
   border-color: #3d3e4d;
@@ -56,12 +58,14 @@ button:focus-visible {
 }
 
 form {
-  margin: 0 4%;
-    max-width: 570px;
-    width: 50%;
-    background: rgba(255, 255, 255, 0);
-    padding: 4px;
-  }
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  max-width: 570px;
+  width: 50%;
+  background: rgba(255, 255, 255, 0);
+  padding: 70px 0;
+}
   input {
     text-align: center;
     width: 100%;
