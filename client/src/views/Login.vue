@@ -1,10 +1,10 @@
-
+//Made by Gina Bain
 <template>
     <div class="login">
       <h1>Welcome to the Login Page</h1>
     </div>
     <div class="LoginForm">
-        <form @submit.prevent="handleLogin">
+        <form @submit.prevent="tempLogin">
             <input v-model="email" type="email" placeholder="Email" required />
             <input v-model="password" type="password" placeholder="Password" required />
             <button type="submit">Login</button>
@@ -15,32 +15,38 @@
 
 <script setup>
 import { ref } from 'vue'
-import {useRouter} from 'vue-router'
-//import router from './router/index.js';
-//import axios from 'axios'
+import { useRouter } from 'vue-router'
+import axios from 'axios'
+import React, { useState, useEffect} from 'react';
 
-const email = ref('')
-const password = ref('')
-const error = ref(null)
+
+const email = useState('')
+const password = useState('')
+const error = useState(null)
 const router = useRouter()
 
 //WILL DELETE AND NTEGRATE PROPER AUTH
 //DEMO PURPOSES ONLY
-const dummyUser = {
-  email: 'user@email.com',
-  password: 'password123'
-}
 
-const handleLogin = async() => {
+const tempLogin  = async () => {
+    console.log('submitted')
     try {
-        if (email.value === dummyUser.email && password.value === dummyUser.password) {
-        router.push('/Home')
-    }else{error.value = 'Login Failed. Inval Cred'}
-    }catch(err){
-        error.value = 'Unexpected err'
-        console.error(err)
+      //I need a function that will take the login data and make it usable for the back end!!
+      //place it here
+      const res = await axios.post('http://localhost:5000/api/authRoutes', {
+        email: email, //or whatever variables 
+        password: password
+      });
+      router.push('/Home')
+      success.value = 'Login successfull!'
+      error.value = ''
+    } catch (err) {
+      error.value = 'Failed to login.'
+      success.value = ''
+      console.error(err)
     }
-}
+  }
+
 </script>
   
 <style scoped>
@@ -51,11 +57,10 @@ const handleLogin = async() => {
   }
   .LoginForm{
     input[type=text] {
+    display: flex;
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
     box-sizing: border-box;
+    
 }
   }
 </style>
-  
