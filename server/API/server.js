@@ -1,6 +1,4 @@
 //Made by Gina Bain
-//use old server and properly integrate the project
-//AKA be sure to finish client-side auth, onboarding, deboarding, role access, etc
 
 import dotenv from "dotenv";
 import { createServer } from "http";
@@ -12,7 +10,7 @@ import mongoose from "mongoose";
 
 
 // Route imports
-//import router from "./routes/deviceRoutes.js"; 
+import router from "./routes/deviceRoutes.js"; 
 import onboard from "./routes/onboardingRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
 import learningCenterRoutes from "./routes/LearningCenterRoutes.js";
@@ -25,7 +23,7 @@ dotenv.config();
 
 const app = express();
 const httpServer = createServer(app);
-const PORT =  5000; //process.env.PORT ||
+const PORT =  process.env.PORT || 5000;
 const __dirname = path.resolve();
 
 initializeSocket(httpServer);
