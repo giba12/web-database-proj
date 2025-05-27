@@ -1,9 +1,9 @@
-//Logic by Nick, implemented by Gina Bain
-
+//const express = require('express');
 import express from "express";
 const router = express.Router();
-
+//const Device = require('../models/Device');
 import Device from "../models/Device.js";
+//const { generateDeviceId } = require('../utils/idGenerator');
 import { generateDeviceId } from "../utils/idGenerator.js";
 
 // CREATE device

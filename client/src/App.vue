@@ -1,4 +1,4 @@
-//Made by Gina Bain
+
 <template>
   <div>
     <router-view />
@@ -20,3 +20,20 @@ export default {
   color: #d3d6f1;
 }
 </style>
+
+<template>
+  <div id="app">
+    <DeviceInventory />
+  </div>
+</template>
+
+<script>
+import DeviceInventory from './components/DeviceInventory.vue';
+
+export default {
+  name: 'App',
+  components: {
+    DeviceInventory,
+  },
+};
+</script>
