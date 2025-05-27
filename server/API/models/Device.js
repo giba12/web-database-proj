@@ -4,19 +4,20 @@ import mongoose from "mongoose";
 
 
 const deviceSchema = new mongoose.Schema({
-    deviceID: {
-        type: String,
-        required: true
+    name: { type: String, required: true },
+    model: { type: String },
+    serialNumber: { type: String, unique: true, required: true },
+    assignedTo: { type: String },
+    purchaseDate: { type: Date },
+    status: {
+      type: String,
+      enum: ['available', 'assigned', 'maintenance', 'retired'],
+      default: 'available',
     },
-    deviceType: String,
-    status: String, //in use/etc
-    userHistory: [{
-        employeeID: String,
-        checkout: Date,
-        return: Date
-    }],
-    softwareInstalled: String
-});
+  }, { timestamps: true });
+  
+  module.exports = mongoose.model('Device', deviceSchema);
+
 
 /**
  * (blank)Schema.pre(?)("save", async function (next)
